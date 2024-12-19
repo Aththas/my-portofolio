@@ -6,19 +6,23 @@ import {RiInstagramLine, RiFacebookCircleFill, RiGithubFill, RiLinkedinFill} fro
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg mt-[-30px] sm:mt-0">
-      <Link href={''} className="hover:text-accent transition-all duration-300">
+    <div className="flex items-center gap-x-5 text-lg mt-[-30px] lg:mt-0">
+      <Link href={'https://www.instagram.com/assasin_1.0/'} className="hover:text-accent transition-all duration-300">
         <RiInstagramLine/>
       </Link>
-      <Link href={''} className="hover:text-accent transition-all duration-300">
+      <Link href={'https://www.facebook.com/Aththas.Rizwan'} className="hover:text-accent transition-all duration-300">
         <RiFacebookCircleFill/>
       </Link>
-      <Link href={''} className="hover:text-accent transition-all duration-300">
+      <Link href={'https://github.com/Aththas'} className="hover:text-accent transition-all duration-300">
         <RiGithubFill/>
       </Link>
-      <Link href={''} className="hover:text-accent transition-all duration-300">
+      <Link href={'https://www.linkedin.com/in/aththas-rizwan-86593a25b/'} className="hover:text-accent transition-all duration-300">
         <RiLinkedinFill/>
       </Link>
+      <Link href={'https://drive.google.com/file/d/12V_PYwYhyZs4JLqFge8L7yCmPDXa5n_q/view?usp=sharing'} className="hover:text-accent transition-all duration-300">
+        cv
+      </Link>
+      
     </div>
   );
 };
