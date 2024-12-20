@@ -31,9 +31,9 @@ const Work = () => {
               animate='show'
               exit='hidden'
             >
-              Aspiring Software Engineer with a solid foundation in Java, C, PHP, and JavaScript. Passionate about Web and
-              Mobile Application Development, eager to contribute innovative solutions to a software team, and committed to
-              continuous learning
+              As a Software Engineer, I have developed various projects using Java, PHP, JavaScript, and C, 
+              showcasing my ability to build scalable and efficient applications. 
+              Take a look at my work to see how I create innovative solutions for web, mobile, and desktop platforms
             </motion.p>
           </div>
           {/* slider */}

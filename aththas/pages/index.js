@@ -24,8 +24,8 @@ const Home = () => {
             exit='hidden'
             className="h1"
           >
-            Transforming Ideas <br/> Into{' '}
-            <span className="text-accent">Digital Reality</span>
+            Transforming Dreams <br/> Into{' '}
+            <span className="text-accent">Digital Innovations</span>
           </motion.h1>
           <motion.p 
             variants={fadeIn('down', 0.3)} 
@@ -34,8 +34,8 @@ const Home = () => {
             exit='hidden'
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-          Yes, you can deploy and host a Next.js application on GitHub Pages. However, GitHub Pages is primarily a static site 
-          hosting service
+            Transforming dreams into digital innovations means turning creative visions into real-world technology. 
+            It’s about using digital tools to make what we imagine a reality
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn/>

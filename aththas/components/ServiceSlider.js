@@ -8,41 +8,42 @@ import 'swiper/css/pagination';
 
 // icons
 import {
-  RxCrop,
-  RxPencil2,
+  RxGlobe,
+  RxMobile,
   RxDesktop,
-  RxReader,
-  RxRocket,
+  RxDrawingPin,
+  RxLockClosed,
   RxArrowTopRight,
 } from "react-icons/rx";
 
 // data
 const serviceData = [
   {
-    icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxGlobe />,
+    title: 'Web Development',
+    description: 'Building responsive, dynamic websites with modern web technologies.',
   },
   {
-    icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxMobile />,
+    title: 'Mobile Development',
+    description: 'Creating seamless mobile applications for iOS and Android platforms.',
   },
   {
     icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Desktop App',
+    description: 'Developing robust desktop applications for various operating systems.',
   },
   {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxDrawingPin />,
+    title: 'UI/UX Design',
+    description: 'Designing intuitive and visually appealing user interfaces and experiences.',
   },
   {
-    icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxLockClosed />,
+    title: 'Cyber Security Tools',
+    description: 'Implementing security measures to protect against digital threats and attacks.',
   },
+
 ];
 
 //import required modules

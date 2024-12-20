@@ -1,25 +1,25 @@
 // testimonial data
 const testimonialData = [
   {
-    image: '/t-avt-1.png',
-    name: 'Anne Smith',
-    position: 'Customer',
+    image: '/t-avt-3.png',
+    name: 'Shaheed Musthalie',
+    position: 'Head - IT Infrastructure Planning & BCP at Mobitel',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Your performance as a Software Engineer has been exceptional, showcasing strong technical skills and a proactive approach to problem-solving',
   },
   {
     image: '/t-avt-2.png',
-    name: 'Jane Doe',
-    position: 'Customer',
+    name: 'Deelaka Gamage',
+    position: 'Information Security Engineer at Mobitel',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Your performance as a Software Engineer has been exceptional, showcasing strong technical skills and a proactive approach to problem-solving',
   },
   {
     image: '/t-avt-3.png',
-    name: 'Jhon Doe',
-    position: 'Customer',
+    name: 'Udara Manathungha',
+    position: 'Senior Software Engineer at Mobitel',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Your performance as a Software Engineer has been exceptional, showcasing strong technical skills and a proactive approach to problem-solving',
   },
 ];
 

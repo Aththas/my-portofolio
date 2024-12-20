@@ -31,9 +31,9 @@ const Services = () => {
               animate='show'
               exit='hidden'
             >
-              Aspiring Software Engineer with a solid foundation in Java, C, PHP, and JavaScript. Passionate about Web and
-              Mobile Application Development, eager to contribute innovative solutions to a software team, and committed to
-              continuous learning
+              As a Software Engineer, I offer expertise in Web and Mobile Application Development using Java, C, PHP, and JavaScript. 
+              I specialize in delivering scalable and efficient solutions, focusing on user-centric designs and seamless functionality. 
+              
             </motion.p>
           </div>
           {/* slider */}

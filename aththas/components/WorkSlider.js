@@ -5,19 +5,23 @@ const workSlides = {
       images: [
         {
           title: 'title',
-          path: '/thumb1.jpg',
+          path: '/project 1.png',
+          link: 'https://github.com/Aththas/mob-iam.git'
         },
         {
           title: 'title',
-          path: '/thumb2.jpg',
+          path: '/project 2.png',
+          link: 'https://github.com/Aththas/dataManagementSystemFrontend.git'
         },
         {
           title: 'title',
-          path: '/thumb3.jpg',
+          path: '/project 7.png',
+          link: 'https://github.com/Aththas/tour.git'
         },
         {
           title: 'title',
-          path: '/thumb4.jpg',
+          path: '/project 6.png',
+          link: 'https://github.com/Aththas/MEI-WebApp-admin.git'
         },
       ],
     },
@@ -25,19 +29,23 @@ const workSlides = {
       images: [
         {
           title: 'title',
-          path: '/thumb4.jpg',
+          path: '/project 5.png',
+          link: 'https://github.com/Aththas/accommodation-management-backend.git'
         },
         {
           title: 'title',
-          path: '/thumb1.jpg',
+          path: '/project 4.png',
+          link: 'https://github.com/Aththas/D30-online-clothing-store.git'
         },
         {
           title: 'title',
-          path: '/thumb2.jpg',
+          path: '/project 8.png',
+          link: 'https://github.com/Aththas/Alimenta-coffee-shop.git'
         },
         {
           title: 'title',
-          path: '/thumb3.jpg',
+          path: '/project 3.png',
+          link: 'https://github.com/Aththas/icst.git'
         },
       ],
     },
@@ -79,6 +87,7 @@ const WorkSlider = () => {
                   <div key={index} className='relative rounded-lg overflow-hidden flex items-center justify-center group'>
                     <div className='flex items-center justify-center relative overflow-hidden group'>
                       {/* image */}
+                      
                       <Image 
                         src={image.path}
                         width={500}
@@ -93,7 +102,7 @@ const WorkSlider = () => {
                       <div 
                         className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20
                         transition-all duration-300'
-                      >
+                      ><a href={image.link} target="_blank">
                         <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
                           {/* title part 1 */}
                           <div className='delay-100'>SOURCE</div>
@@ -106,6 +115,7 @@ const WorkSlider = () => {
                             <BsArrowRight/>
                           </div>
                         </div>
+                        </a>
                       </div>
                     </div>
                   </div>

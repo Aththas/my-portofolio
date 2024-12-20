@@ -215,9 +215,10 @@ const About = () => {
             animate='show'
             exit='hidden'
           >
-            Aspiring Software Engineer with a solid foundation in Java, C, PHP, and JavaScript. Passionate about Web and
+            Aspiring Software Engineer with a solid foundation in Java, C, PHP, and JavaScript.
+            <span className="hidden md:block"> Passionate about Web and
             Mobile Application Development, eager to contribute innovative solutions to a software team, and committed to
-            continuous learning.
+            continuous learning.</span>
           </motion.p>
           <motion.div 
             className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
