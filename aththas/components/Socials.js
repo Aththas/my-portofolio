@@ -19,7 +19,7 @@ const Socials = () => {
       <Link href={'https://www.linkedin.com/in/aththas-rizwan-86593a25b/'} className="hover:text-accent transition-all duration-300">
         <RiLinkedinFill/>
       </Link>
-      <Link href={'https://drive.google.com/file/d/12V_PYwYhyZs4JLqFge8L7yCmPDXa5n_q/view?usp=sharing'} className="hover:text-accent transition-all duration-300">
+      <Link href={'https://drive.google.com/file/d/17VYalgDC8sVfYlpYJnS9evE0MD2SD9_u/view?usp=sharing'} className="hover:text-accent transition-all duration-300">
         cv
       </Link>
       
