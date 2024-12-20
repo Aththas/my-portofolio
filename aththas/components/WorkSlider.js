@@ -5,22 +5,22 @@ const workSlides = {
       images: [
         {
           title: 'title',
-          path: '/project 1.png',
+          path: '/my-portofolio/project 1.png',
           link: 'https://github.com/Aththas/mob-iam.git'
         },
         {
           title: 'title',
-          path: '/project 2.png',
+          path: '/my-portofolio/project 2.png',
           link: 'https://github.com/Aththas/dataManagementSystemFrontend.git'
         },
         {
           title: 'title',
-          path: '/project 7.png',
+          path: '/my-portofolio/project 7.png',
           link: 'https://github.com/Aththas/tour.git'
         },
         {
           title: 'title',
-          path: '/project 6.png',
+          path: '/my-portofolio/project 6.png',
           link: 'https://github.com/Aththas/MEI-WebApp-admin.git'
         },
       ],
@@ -29,22 +29,22 @@ const workSlides = {
       images: [
         {
           title: 'title',
-          path: '/project 5.png',
+          path: '/my-portofolio/project 5.png',
           link: 'https://github.com/Aththas/accommodation-management-backend.git'
         },
         {
           title: 'title',
-          path: '/project 4.png',
+          path: '/my-portofolio/project 4.png',
           link: 'https://github.com/Aththas/D30-online-clothing-store.git'
         },
         {
           title: 'title',
-          path: '/project 8.png',
+          path: '/my-portofolio/project 8.png',
           link: 'https://github.com/Aththas/Alimenta-coffee-shop.git'
         },
         {
           title: 'title',
-          path: '/project 3.png',
+          path: '/my-portofolio/project 3.png',
           link: 'https://github.com/Aththas/icst.git'
         },
       ],
