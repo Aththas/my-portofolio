@@ -54,76 +54,76 @@ const aboutData = [
       {
         title: 'Frontend',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaSass />,
-          <FaJs />,
-          <FaReact />,
-          <SiTypescript />,
-          <SiRedux />,
-          <SiNextdotjs />,
-          <SiFramer />,
-        ]
+          () => <FaHtml5 />, 
+          () => <FaCss3 />, 
+          () => <FaSass />, 
+          () => <FaJs />, 
+          () => <FaReact />, 
+          () => <SiTypescript />, 
+          () => <SiRedux />, 
+          () => <SiNextdotjs />, 
+          () => <SiFramer />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Backend',
         icons: [
-          <FaJava />,
-          <FaJs />,
-          <FaPhp />,
-          <FaCode />,
-          <FaLeaf />,
-          <FaPowerOff />,
-          <SiDart />,
-        ]
+          () => <FaJava />, 
+          () => <FaJs />, 
+          () => <FaPhp />, 
+          () => <FaCode />, 
+          () => <FaLeaf />, 
+          () => <FaPowerOff />, 
+          () => <SiDart />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Database',
         icons: [
-          <FaDatabase />,
-          <SiPostgresql />, 
-          <FaFire />, 
-          <SiMongodb />, 
-        ],
+          () => <FaDatabase />, 
+          () => <SiPostgresql />, 
+          () => <FaFire />, 
+          () => <SiMongodb />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Version Control',
         icons: [
-          <FaGit />,
-          <FaGithub />,
-          <SiMicrosoftazure />, 
-        ],
+          () => <FaGit />, 
+          () => <FaGithub />, 
+          () => <SiMicrosoftazure />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Cloud',
         icons: [
-          <FaDocker />,
-          <SiAmazonaws />, 
-          <SiKubernetes />, 
-          <FaCloud />,
-        ],
+          () => <FaDocker />, 
+          () => <SiAmazonaws />, 
+          () => <SiKubernetes />, 
+          () => <FaCloud />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Other Tools',
         icons: [
-          <FaNetworkWired />, 
-          <SiPostman />,
-          <FaTerminal />,
-          <FaLinux />,
-        ],
+          () => <FaNetworkWired />, 
+          () => <SiPostman />, 
+          () => <FaTerminal />, 
+          () => <FaLinux />
+        ].map((Icon, index) => <Icon key={index} />)
       },
       {
         title: 'Security Tools',
         icons: [
-          <FaShieldAlt />, 
-          <FaBrain />,
-          <FaKey />,
-          <FaLock />,
-          <FaUserSecret />,
-          <FaBug />,
-          <SiIbm />,
-          <SiOracle />,
-        ],
+          () => <FaShieldAlt />, 
+          () => <FaBrain />, 
+          () => <FaKey />, 
+          () => <FaLock />, 
+          () => <FaUserSecret />, 
+          () => <FaBug />, 
+          () => <SiIbm />, 
+          () => <SiOracle />
+        ].map((Icon, index) => <Icon key={index} />)
       },
     ],
   },
@@ -171,6 +171,7 @@ const aboutData = [
     ],
   },
 ];
+
 
 //components
 import AvatarOther from '../../components/AvatarOther';
