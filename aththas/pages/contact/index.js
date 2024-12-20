@@ -45,7 +45,7 @@ const Contact = () => {
             animate='show'
             exit='hidden'
           >
-            Let's connect<span className='text-accent'>.</span>
+            Let&apos;s connect<span className='text-accent'>.</span>
           </motion.h2>
           {/* form */}
           <motion.form 
@@ -87,7 +87,7 @@ const Contact = () => {
                 className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center
                 justify-center overflow-hidden hover:border-accent group'
               >
-                <span className='group-hover:translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>Let's talk</span>
+                <span className='group-hover:translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>Let&apos;s talk</span>
                 <BsArrowRight 
                   className='-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100
                   transition-all duration-300 absolute text-[22px]'/>
