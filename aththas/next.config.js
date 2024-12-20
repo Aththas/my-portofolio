@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/my-portofolio',
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: true,
