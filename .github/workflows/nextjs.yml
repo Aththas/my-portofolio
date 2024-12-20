@@ -66,6 +66,7 @@ jobs:
         run: |
           cd aththas
           npm run build
+          npm run export
 
       # Export static files (use next export to generate the `out` folder)
       - name: Export Next.js project
