@@ -21,51 +21,57 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Detect Package Manager
-        id: detect-package-manager
-        run: |
-          cd aththas  # Change to the aththas folder
-          if [ -f "yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-          elif [ -f "package-lock.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          node-version: '20'
 
-      - name: Restore Cache
+      # Check if package-lock.json exists in the aththas folder
+      - name: Check package-lock.json
+        run: |
+          if [ -f "aththas/package-lock.json" ]; then
+            echo "Using npm"
+            echo "manager=npm" >> $GITHUB_ENV
+          elif [ -f "aththas/yarn.lock" ]; then
+            echo "Using yarn"
+            echo "manager=yarn" >> $GITHUB_ENV
+          else
+            echo "No lock file found in the aththas directory."
+            exit 1
+          fi
+
+      # Cache node modules and next build cache based on the manager
+      - name: Cache dependencies
         uses: actions/cache@v4
         with:
-          path: aththas/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-${{ hashFiles('aththas/**.[jt]s', 'aththas/**.[jt]sx') }}
+          path: |
+            aththas/node_modules
+            aththas/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-${{ hashFiles('aththas/package.json') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-
 
+      # Install dependencies based on the package manager
       - name: Install Dependencies
         run: |
-          cd aththas  # Change to the aththas folder
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+          cd aththas
+          if [ "$manager" == "npm" ]; then
+            npm ci
+          elif [ "$manager" == "yarn" ]; then
+            yarn install
+          fi
 
-      - name: Build with Next.js
+      # Build the project using next.js
+      - name: Build Next.js project
         run: |
-          cd aththas  # Change to the aththas folder
-          ${{ steps.detect-package-manager.outputs.runner }} next build
+          cd aththas
+          npm run build
 
+      # Upload output to GitHub Pages
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: aththas/out  # Ensure the build output is uploaded
+          path: aththas/out
 
   deploy:
     environment:
