@@ -66,16 +66,10 @@ jobs:
         run: |
           cd aththas
           npm run build
-          npm run export
-
-      # Export static files (use next export to generate the `out` folder)
-      - name: Export Next.js project
-        run: |
-          cd aththas
           npm run export  # This will create the `out` directory
 
       # Upload output to GitHub Pages
-      - name: Upload Artifact
+      - name: Upload Output to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: aththas/out
