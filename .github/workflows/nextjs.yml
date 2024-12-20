@@ -48,9 +48,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: aththas/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/**/package-lock.json', 'aththas/**/yarn.lock') }}-${{ hashFiles('aththas/**.[jt]s', 'aththas/**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-${{ hashFiles('aththas/**.[jt]s', 'aththas/**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('aththas/**/package-lock.json', 'aththas/**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-
 
       - name: Install Dependencies
         run: |
