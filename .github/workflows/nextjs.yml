@@ -1,0 +1,85 @@
+name: Deploy Next.js site to Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Check if package-lock.json exists in the aththas folder
+      - name: Check package-lock.json
+        run: |
+          if [ -f "aththas/package-lock.json" ]; then
+            echo "Using npm"
+            echo "manager=npm" >> $GITHUB_ENV
+          elif [ -f "aththas/yarn.lock" ]; then
+            echo "Using yarn"
+            echo "manager=yarn" >> $GITHUB_ENV
+          else
+            echo "No lock file found in the aththas directory."
+            exit 1
+          fi
+
+      # Cache node modules and next build cache based on the manager
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            aththas/node_modules
+            aththas/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-${{ hashFiles('aththas/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('aththas/package-lock.json', 'aththas/yarn.lock') }}-
+
+      # Install dependencies based on the package manager
+      - name: Install Dependencies
+        run: |
+          cd aththas
+          if [ "$manager" == "npm" ]; then
+            npm ci
+          elif [ "$manager" == "yarn" ]; then
+            yarn install
+          fi
+
+      # Build the project using next.js
+      - name: Build Next.js project
+        run: |
+          cd aththas
+          npm run build
+
+      # Upload output to GitHub Pages
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: aththas/out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
