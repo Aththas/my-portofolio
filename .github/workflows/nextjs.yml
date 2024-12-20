@@ -21,14 +21,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set Working Directory
-        run: |
-          echo "WORKING_DIR=aththas" >> $GITHUB_ENV
-
       - name: Detect Package Manager
         id: detect-package-manager
         run: |
-          cd $WORKING_DIR
+          cd aththas  # Change to the aththas folder
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
@@ -51,26 +47,25 @@ jobs:
       - name: Restore Cache
         uses: actions/cache@v4
         with:
-          path: |
-            $WORKING_DIR/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('${{ env.WORKING_DIR }}/**/package-lock.json', '${{ env.WORKING_DIR }}/**/yarn.lock') }}-${{ hashFiles('${{ env.WORKING_DIR }}/**.[jt]s', '${{ env.WORKING_DIR }}/**.[jt]sx') }}
+          path: aththas/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('aththas/**/package-lock.json', 'aththas/**/yarn.lock') }}-${{ hashFiles('aththas/**.[jt]s', 'aththas/**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('${{ env.WORKING_DIR }}/**/package-lock.json', '${{ env.WORKING_DIR }}/**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('aththas/**/package-lock.json', 'aththas/**/yarn.lock') }}-
 
       - name: Install Dependencies
         run: |
-          cd $WORKING_DIR
+          cd aththas  # Change to the aththas folder
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
         run: |
-          cd $WORKING_DIR
+          cd aththas  # Change to the aththas folder
           ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: $WORKING_DIR/out
+          path: aththas/out  # Ensure the build output is uploaded
 
   deploy:
     environment:
